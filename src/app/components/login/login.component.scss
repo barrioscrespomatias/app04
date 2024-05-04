@@ -1,0 +1,35 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #30425a;
+$text-color: #fefcf9;
+
+$primero: #fa8dff;
+$segundo: #ff49e6;
+$tercero: #dfffd0;
+$cuarto: #ffc135;
+$quinto: #ffc48b;
+
+body {
+  font: 100% $font-stack;
+}
+
+img {
+    border-radius: 50%;
+  }
+
+.background {
+    background-image: url('../../../assets/images/04-background.svg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Escala la imagen para cubrir todo el contenedor */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Fija la imagen en su posición original */
+  }
+
+.blue {
+    font: 100% $font-stack;
+    background-color: transparent;
+    
+  }
+
+ion-card-title, ion-card-subtitle{
+    color: $text-color;
+}
