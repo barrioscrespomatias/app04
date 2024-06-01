@@ -1,8 +1,7 @@
 <body class="background">
   <ion-list class="blue ion-margin-top">
-    <form [formGroup]="form">
+    <form [formGroup]="form" action="javascript:void(0)">
       <ion-grid class="ion-margin-top" >
-
         <ion-row>
           <ion-col size="12" class="input-color" style="margin-top: 5%;">
             <ion-item>
@@ -45,8 +44,7 @@
             </ion-item>
           </ion-col>
         </ion-row>
-
-
+                
         <ion-row class="ion-align-items-center">
           <ion-col size="12" class="ion-text-center">
             <ion-button class="ion-margin-top" type="submit" color="primary" size="large" expand="block"
@@ -76,6 +74,18 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+
+      <!-- <ion-grid>
+        <ion-list>
+          <ion-item>
+            <ion-select aria-label="roles" interface="popover" placeholder="Roles" (ionChange)="onRoleChange($event)" [(ngModel)]="selectedRole">
+              <ion-select-option value="admin">Admin</ion-select-option>
+              <ion-select-option value="invitado">Invitado</ion-select-option>
+              <ion-select-option value="usuario">Usuario</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-grid> -->
     </form>
   </ion-list>
 

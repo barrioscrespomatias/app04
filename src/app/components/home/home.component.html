@@ -1,1 +1,25 @@
-<app-menu></app-menu>
+<ion-content class="fullscreen-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-segment value="all">
+        <ion-segment-button (click)="navigateTo('')" value="favorites">
+          <ion-label>Cerrar sesión</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
+
+  <body class="background">
+    <ion-row class="ion-justify-content-center" style="margin-top: 50%;">
+      <ion-col size="12" class="ion-text-center">
+        <ion-button (click)="nivelFacil()">Fácil</ion-button>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button (click)="nivelMedio()">Medio</ion-button>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button (click)="nivelDificil()">Difícil</ion-button>
+      </ion-col>
+    </ion-row>
+  </body>
+</ion-content>

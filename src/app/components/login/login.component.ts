@@ -10,6 +10,7 @@ import { AngularFireService } from '../../services/angular-fire.service';
 export class LoginComponent implements OnInit {
   form!: FormGroup;
   public isLogged: boolean = false;
+  selectedRole!: string;
 
   constructor(public angularFireService: AngularFireService) {
     this.checkLoggedIn();
@@ -21,6 +22,11 @@ export class LoginComponent implements OnInit {
 
   SignIn() {
     this.angularFireService.SignIn(this.email?.value, this.password?.value);
+    setTimeout(() => {
+      this.form.controls['email'].setValue('');
+      this.form.controls['password'].setValue('');
+      this.selectedRole = ''; 
+    }, 700);
   }
 
   GoogleAuth() {
@@ -55,5 +61,30 @@ export class LoginComponent implements OnInit {
 
   get password() {
     return this.form.get('password');
+  }
+
+  onRoleChange(event: any) {
+    const selectedRole = event.detail.value;
+    let email = '';
+    let password = '';
+
+    switch (selectedRole) {
+      case 'admin':
+        email = 'admin@admin.com';
+        password = '111111';
+        break;
+      case 'invitado':
+        email = 'invitado@invitado.com';
+        password = '222222';
+        break;
+      case 'usuario':
+        email = 'usuario@usuario.com';
+        password = '333333';
+        break;
+      default:
+        break;
+    }
+
+    this.form.patchValue({ email, password });
   }
 }

@@ -1,0 +1,28 @@
+.background {
+    background-image: url('../../../assets/images/pantalla-inicial.png');
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    background-size: cover;
+    /* Escala la imagen para cubrir todo el contenedor */
+    background-position: center center;
+    /* Centra la imagen */
+    background-attachment: fixed;
+    /* Fija la imagen en su posición original */
+    background-color: #7bd3dd;
+}
+
+.slide-bck-bottom {
+    animation: slide-bck-bottom 3s cubic-bezier(.47,0.000,.745,.715) infinite alternate;
+  }
+  
+  @keyframes slide-bck-bottom {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px); /* Mueve hacia abajo */
+    }
+    100% {
+      transform: translateY(0); /* Mueve hacia arriba */
+    }
+  }

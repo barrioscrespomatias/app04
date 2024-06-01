@@ -1,0 +1,28 @@
+<ion-content class="fullscreen-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-segment value="all">
+        <ion-segment-button value="favorites">
+          <ion-label>Medio</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="navigateTo('tabla-medio')" value="favorites">
+          <ion-label>Posiciones</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="game-container background">
+    <div class="grid">
+      <div class="memory-card" *ngFor="let card of cards; let i = index" (click)="handleCardClicked({ cardNumber: card.cardNumber, isFlipped: !card.isFlipped })">
+        <img [src]="card.isFlipped || card.isMatched ? card.imagePathBack : card.imagePathFront" [class.flip-in-ver-right]="card.isFlipped" [class.matched]="card.isMatched" alt="memory card">
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="timer-display">{{formattedTime}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

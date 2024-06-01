@@ -49,7 +49,6 @@ export class UsuarioService implements Repository<Usuario> {
     return '';
   }
   update(docRef: string, ...args: unknown[]): boolean {
-    debugger
     console.log(args
       )
     try {

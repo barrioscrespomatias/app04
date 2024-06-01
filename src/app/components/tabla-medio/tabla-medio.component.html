@@ -1,0 +1,25 @@
+<body class="background">
+  <div class="leaderboard-container">
+    <h2>Tabla de Posiciones Medio</h2>
+    <div class="table-wrapper">
+      <table class="leaderboard-table">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Usuario</th>
+            <th>Tiempo</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let posicion of posicionesMedio; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ posicion.userId }}</td>
+            <td>{{ posicion.tiempo }}</td>
+            <td>{{ posicion.fecha | date: 'short' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent  implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router, private navCtrl: NavController) { }
 
   ngOnInit() {}
 
+  nivelFacil() {
+    this.router.navigate(['facil']);
+  }
+
+  nivelMedio() {
+    this.router.navigate(['medio']);
+  }
+
+  nivelDificil() {
+    this.router.navigate(['dificil']);
+  }
+
+  navigateTo(section: string) {
+    this.navCtrl.navigateForward(`/${section}`);
+  }
 }

@@ -13,10 +13,18 @@ import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ToastComponent } from './components/toast/toast.component';
+import { InitComponent } from './components/init/init.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MemoryCardComponent } from './components/memory-card/memory-card.component';
+import { InitMedioComponent } from './components/init-medio/init-medio.component';
+import { DificilComponent } from './components/dificil/dificil.component';
+import { CommonModule } from '@angular/common'; // Asegúrate de importar CommonModule
+import { TablaPosicionesComponent } from './componenets/tabla-posiciones/tabla-posiciones.component';
+import { TablaMedioComponent } from './components/tabla-medio/tabla-medio.component';
+import { TablaDificilComponent } from './components/tabla-dificil/tabla-dificil.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, LoginComponent, HomeComponent, ToastComponent],
+  declarations: [AppComponent, MenuComponent, LoginComponent, HomeComponent, ToastComponent, InitComponent, MemoryCardComponent, InitMedioComponent, DificilComponent, TablaPosicionesComponent, TablaMedioComponent,TablaDificilComponent],
   imports: [
     BrowserModule,
      IonicModule.forRoot(), 
@@ -25,10 +33,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   exports: [
-    MenuComponent, LoginComponent,HomeComponent,ToastComponent // Agrega el componente en la sección de exports
+    MenuComponent, LoginComponent,HomeComponent,ToastComponent, InitComponent, MemoryCardComponent, InitMedioComponent, DificilComponent, TablaPosicionesComponent, TablaMedioComponent, TablaDificilComponent // Agrega el componente en la sección de exports
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: environment }
