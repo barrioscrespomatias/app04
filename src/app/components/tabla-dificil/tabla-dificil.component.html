@@ -1,25 +1,34 @@
-<body class="background">
-  <div class="leaderboard-container">
-    <h2>Tabla de Posiciones Difícil</h2>
-    <div class="table-wrapper">
-      <table class="leaderboard-table">
-        <thead>
-          <tr>
-            <th>Posición</th>
-            <th>Usuario</th>
-            <th>Tiempo</th>
-            <th>Fecha</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let posicion of posicionesDificil; let i = index">
-            <td>{{ i + 1 }}</td>
-            <td>{{ posicion.userId }}</td>
-            <td>{{ posicion.tiempo }}</td>
-            <td>{{ posicion.fecha | date: 'short' }}</td>
-          </tr>
-        </tbody>
-      </table>
+<ion-header>
+  <ion-toolbar>
+    <ion-segment>
+      <ion-segment-button>
+        <ion-label>Dificil</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <body>
+    <div class="leaderboard-container">
+      <div class="table-wrapper">
+        <div class="card" *ngFor="let posicion of posicionesDificil; let i = index">
+          <div class="card-header">
+            <h3># {{ i + 1 }}</h3>
+            <span>{{ posicion.userId }}</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="label">Tiempo</div>
+              <div class="value">{{ posicion.tiempo }}</div>
+            </div>
+            <div>
+              <div class="label">Fecha</div>
+              <div class="value">{{ posicion.fecha | date: 'short' }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
+</ion-content>

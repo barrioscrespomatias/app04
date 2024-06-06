@@ -1,89 +1,75 @@
-.background {
-    background-color: antiquewhite;
-    font-family: Arial, sans-serif;
-  }
-  
-  .leaderboard-container {
-    max-width: 100%;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
-  }
-  
-  .leaderboard-container h2 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .table-wrapper {
-    max-height: 750px; /* Ajusta esta altura según tu necesidad */
-    overflow-y: auto; /* Permite desplazamiento vertical */
-  }
-  
-  .leaderboard-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .leaderboard-table th,
-  .leaderboard-table td {
-    padding: 10px;
-    border: 1px solid #ccc;
-    word-wrap: break-word; /* Evita que el texto se salga de las celdas */
-  }
-  
-  .leaderboard-table th {
-    background-color: #007bff;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  
-  .leaderboard-table tbody tr:nth-child(even) {
-    background-color: #f8f9fa;
-  }
-  
-  .leaderboard-table tbody tr:hover {
-    background-color: #e9ecef;
-  }
-  
-  .leaderboard-table td {
-    text-align: center;
-  }
-  
-  .leaderboard-table td:first-child {
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  @media (max-width: 768px) {
-    .leaderboard-container {
-      padding: 10px;
-    }
-  
-    .table-wrapper {
-      max-height: 750px; /* Ajusta esta altura según tu necesidad */
-    }
-  
-    .leaderboard-table th,
-    .leaderboard-table td {
-      padding: 8px;
-    }
-  
-    .leaderboard-table th,
-    .leaderboard-table td {
-      display: block; /* Hace que las celdas se comporten como bloques */
-      width: 100%; /* Las celdas ocupan todo el ancho disponible */
-    }
-  
-    .leaderboard-table tbody tr {
-      display: flex;
-      flex-direction: column; /* Las filas se comportan como columnas */
-      align-items: center; /* Alinea el contenido al centro */
-    }
-  }
-  
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffb000;
+  margin: 0;
+  padding: 20px;
+}
+
+.leaderboard-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.card {
+  background-color: #F0E5CC;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: #555;
+}
+
+.card-header span {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.9em;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-body div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.card-body div:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: bold;
+  color: #333;
+}
+
+.value {
+  color: #777;
+}
+
+.table-wrapper {
+  max-height: 80vh;
+  overflow-y: auto;
+}

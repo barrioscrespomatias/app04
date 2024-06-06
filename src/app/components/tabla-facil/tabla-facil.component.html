@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
     <ion-segment>
-      <ion-segment-button value="medio">
-        <ion-label>Medio</ion-label>
+      <ion-segment-button>
+        <ion-label>Fácil</ion-label>
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
@@ -12,7 +12,7 @@
   <body>
     <div class="leaderboard-container">
       <div class="table-wrapper">
-        <div class="card" *ngFor="let posicion of posicionesMedio; let i = index">
+        <div class="card" *ngFor="let posicion of posicionesFacil; let i = index">
           <div class="card-header">
             <h3># {{ i + 1 }}</h3>
             <span>{{ posicion.userId }}</span>

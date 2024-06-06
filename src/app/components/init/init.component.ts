@@ -91,22 +91,23 @@ export class InitComponent implements OnInit {
       this.cards.forEach(card => {
         card.isFlipped = true;
       });
-
+  
       setTimeout(() => {
         this.toastNotification.ToastMessage("Has ganado!", "middle");
-
+  
         const posicion: Posicion = {
           userId: this.currentEmail,
-          tiempo: (this.elapsedTime / 1000).toString(), // Convertir milisegundos a segundos
+          tiempo: this.elapsedTime / 1000, // Convertir milisegundos a segundos y almacenar como número
           fecha: new Date().toISOString(), // Obtener la fecha actual en formato ISO
           nivel: "facil"
         };
-
+  
         this.posicionesService.Crear(posicion);
         this.resetGame();
       }, 1000);
     }
   }
+  
 
   startTimer() {
     this.startTime = Date.now();

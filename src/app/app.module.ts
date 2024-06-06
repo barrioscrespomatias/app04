@@ -22,9 +22,10 @@ import { CommonModule } from '@angular/common'; // Asegúrate de importar Common
 import { TablaPosicionesComponent } from './componenets/tabla-posiciones/tabla-posiciones.component';
 import { TablaMedioComponent } from './components/tabla-medio/tabla-medio.component';
 import { TablaDificilComponent } from './components/tabla-dificil/tabla-dificil.component';
+import { TablaFacilComponent } from './components/tabla-facil/tabla-facil.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, LoginComponent, HomeComponent, ToastComponent, InitComponent, MemoryCardComponent, InitMedioComponent, DificilComponent, TablaPosicionesComponent, TablaMedioComponent,TablaDificilComponent],
+  declarations: [AppComponent, MenuComponent, LoginComponent, HomeComponent, ToastComponent, InitComponent, MemoryCardComponent, InitMedioComponent, DificilComponent, TablaPosicionesComponent, TablaMedioComponent,TablaDificilComponent, TablaFacilComponent],
   imports: [
     BrowserModule,
      IonicModule.forRoot(), 
@@ -37,7 +38,7 @@ import { TablaDificilComponent } from './components/tabla-dificil/tabla-dificil.
     CommonModule
   ],
   exports: [
-    MenuComponent, LoginComponent,HomeComponent,ToastComponent, InitComponent, MemoryCardComponent, InitMedioComponent, DificilComponent, TablaPosicionesComponent, TablaMedioComponent, TablaDificilComponent // Agrega el componente en la sección de exports
+    MenuComponent, LoginComponent,HomeComponent,ToastComponent, InitComponent, MemoryCardComponent, InitMedioComponent, DificilComponent, TablaPosicionesComponent, TablaMedioComponent, TablaDificilComponent, TablaFacilComponent // Agrega el componente en la sección de exports
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: environment }

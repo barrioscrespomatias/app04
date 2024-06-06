@@ -1,25 +1,23 @@
-<body class="background">
-  <div class="leaderboard-container">
-    <h2>Tabla de Posiciones Fácil</h2>
-    <div class="table-wrapper">
-      <table class="leaderboard-table">
-        <thead>
-          <tr>
-            <th>Posición</th>
-            <th>Usuario</th>
-            <th>Tiempo</th>
-            <th>Fecha</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let posicion of posicionesFacil; let i = index">
-            <td>{{ i + 1 }}</td>
-            <td>{{ posicion.userId }}</td>
-            <td>{{ posicion.tiempo }}</td>
-            <td>{{ posicion.fecha | date: 'short' }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</body>
+<ion-header>
+  <ion-toolbar>
+    <ion-segment value="all">
+      <ion-segment-button (click)="navigateTo('')" value="favorites">
+        <ion-label>Cerrar sesión</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="myphoto">
+  <ion-col size="12">
+    <img src="../../../assets/images/facil.png" class="slide-bck-bottom" alt="" (click)="tablaFacil()" height="200px">
+  </ion-col>
+  <ion-col size="12">
+    <img src="../../../assets/images/medio.png" class="shake-top" alt="" (click)="tablaMedio()" height="200px">
+  </ion-col>
+  <ion-col size="12">
+    <img src="../../../assets/images/dificil.png" class="vibrate-1" alt="" (click)="tablaDificil()" height="200px">
+  </ion-col>
+</ion-content>
+
+<!-- (click)="AccesoRapido('usuario@usuario.com','333333')">USUARIO</ion-button> -->

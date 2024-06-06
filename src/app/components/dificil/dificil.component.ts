@@ -110,7 +110,7 @@ export class DificilComponent implements OnInit, OnDestroy {
 
         const posicion: Posicion = {
           userId: this.currentEmail,
-          tiempo: (this.elapsedTime / 1000).toString(), // Convertir milisegundos a segundos
+          tiempo: this.elapsedTime / 1000, // Convertir milisegundos a segundos
           fecha: new Date().toISOString(), // Obtener la fecha actual en formato ISO
           nivel: "dificil"
         };

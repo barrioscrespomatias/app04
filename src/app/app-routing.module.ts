@@ -9,6 +9,7 @@ import { DificilComponent } from './components/dificil/dificil.component';
 import { TablaPosicionesComponent } from './componenets/tabla-posiciones/tabla-posiciones.component';
 import { TablaMedioComponent } from './components/tabla-medio/tabla-medio.component';
 import { TablaDificilComponent } from './components/tabla-dificil/tabla-dificil.component';
+import { TablaFacilComponent } from './components/tabla-facil/tabla-facil.component';
 
 const routes: Routes = [
   // {
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'medio', component: InitMedioComponent},
   { path: 'dificil', component: DificilComponent},
   { path: 'home', component: HomeComponent },
-  { path: 'tabla-facil', component: TablaPosicionesComponent},
+  { path: 'tabla-posiciones', component: TablaPosicionesComponent},
+  { path: 'tabla-facil', component: TablaFacilComponent},
   { path: 'tabla-medio', component: TablaMedioComponent},
   { path: 'tabla-dificil', component: TablaDificilComponent},
   {

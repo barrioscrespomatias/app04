@@ -1,6 +1,6 @@
 export interface Posicion {
     userId?: string;
-    tiempo: string;
+    tiempo: number;
     fecha: string;
     nivel: string;
 }

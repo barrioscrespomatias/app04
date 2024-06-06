@@ -32,39 +32,26 @@ export class PosicionesService {
     private posicionRepositorioService: PosicionRepositorioService,
     private db: AngularFirestore
   ) {
-    // if (!this.subscription) {
-    //   this.subscription =
-    //     this.posicionRepositorioService.listadoPosiciones$.subscribe(
-    //       (data) => {
-    //         this.listadoPosicionesModelo = data;
-    //       }
-    //     );
-    //     this.subscription.unsubscribe();
-    // }
-
-    // End constructor
   }
   //#endregion
 
   //#region Métodos
-  async Crear(
-    posicionRegistro: Posicion
-  ): Promise<{ mensaje: string; valido: boolean }> {
+  async Crear(posicionRegistro: Posicion): Promise<{ mensaje: string; valido: boolean }> {
     try {
-      let posicionDocRef =
-        this.posicionRepositorioService.addItem("posiciones" ,posicionRegistro);
+      // Asegurarse de que 'tiempo' se guarda como número
+      posicionRegistro.tiempo = parseFloat(posicionRegistro.tiempo as any);
+      
+      await this.db.collection('posiciones').add(posicionRegistro);
 
       return {
-        mensaje: 'posicion creada correctamente',
+        mensaje: 'Posición creada correctamente',
         valido: true,
       };
     } catch (err) {
       console.log(err);
-      let errorMensaje = 'Hubo un error al intentar registrar la posicion';
+      let errorMensaje = 'Hubo un error al intentar registrar la posición';
       if (err instanceof FirebaseError) {
-        // if (err.code == 'auth/email-already-in-use') {
-        //   errorMensaje = 'El email ingresado ya existe, ingrese otro';
-        // }
+        // Gestionar errores específicos de Firebase si es necesario
       }
       return { mensaje: errorMensaje, valido: false };
     }
@@ -72,9 +59,9 @@ export class PosicionesService {
 
   ObtenerPosicionesPorNivel(nivel: string): Observable<Posicion[]> {
     return this.db.collection<Posicion>('posiciones', ref => ref.where('nivel', '==', nivel)
-                                                                .orderBy('tiempo','asc')
+                                                                .orderBy('tiempo', 'asc')
                                                                 .limit(10))
-                                                                .valueChanges();
+                 .valueChanges();
   }
 
   async TraerTodos() {
